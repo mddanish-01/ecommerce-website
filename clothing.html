@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clothing | MEN'S</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/clothing.css">
+    <script src="https://kit.fontawesome.com/4ee53d3e0e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="clothing-page">
+
+    <header class="navbar">
+
+        <div class="logo">
+            MEN'S
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="clothing.html" class="active">Clothing</a>
+            <a href="footwear.html">Footwear</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="#">Lookbook</a>
+            
+        </nav>
+
+        <div class="nav-icons">
+            <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="icon-btn" onclick="openLoginPage()"><i class="fa-solid fa-user" ></i></button>
+            <button class="icon-btn" onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+    </header>
+
+    <section class="clothing-header">
+
+        <p>THE CLOTHING COLLECTION</p>
+
+        <h1>Clothing</h1>
+
+        <span>
+            Modern essentials designed for every wardrobe.
+        </span>
+
+    </section>
+
+<section class="clothing-categories">
+
+    <div class="category-header">
+
+        <p>SHOP BY CATEGORY</p>
+
+        <h2>Find Your Style</h2>
+
+    </div>
+
+
+    <div class="clothing-category-grid">
+
+        <a href="#" class="clothing-category-card">
+            <img src="images/clothing-images/tshirts.jpg" alt="Men's T-Shirts">
+
+            <div class="category-overlay">
+                <h3>T-Shirts</h3>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+        <a href="#" class="clothing-category-card">
+            <img src="images/clothing-images/shirts.jpg" alt="Men's Shirts">
+
+            <div class="category-overlay">
+                <h3>Shirts</h3>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="clothing-category-card">
+
+            <img src="images/clothing-images/trousers.jpg" alt="Men's Trousers">
+
+            <div class="category-overlay">
+                <h3>Trousers</h3>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+        <a href="#" class="clothing-category-card">
+
+            <img src="images/clothing-images/jackets.jpg" alt="Men's Jackets">
+
+            <div class="category-overlay">
+                <h3>Jackets</h3>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+        <a href="#" class="clothing-category-card">
+
+            <img src="images/clothing-images/hoodies.jpg" alt="Men's Hoodies">
+
+            <div class="category-overlay">
+                <h3>Hoodies</h3>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+<footer class="footer">
+
+    <div class="footer-main">
+       <div class="footer-brand">
+            <div class="footer-logo">
+                MEN'S
+            </div>
+            <p>
+                Modern menswear designed for
+                the way you live, work and move.
+            </p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Shop</h3>
+            <a href="#">New Arrivals</a>
+            <a href="#">Clothing</a>
+            <a href="#">Footwear</a>
+            <a href="#">Accessories</a>
+            <a href="#">Sale</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Help</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Returns & Exchanges</a>
+            <a href="#">Size Guide</a>
+            <a href="#">FAQ</a>
+        </div>
+
+       <div class="footer-newsletter">
+            <h3>Stay in the loop</h3>
+            <p>
+                Subscribe for new arrivals,
+                exclusive offers and style inspiration.
+            </p>
+            <form class="newsletter-form">
+                <input
+                    type="email"
+                    placeholder="Your email address"
+                >
+                <button type="submit">
+                    →
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © 2026 MEN'S. All rights reserved.
+        </p>
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+
+</footer>
+<script src="script.js"></script>
+<script>
+    function openCart(){
+        window.location.href="cart.html";
+    }
+</script>
+</body>
+
+</html>

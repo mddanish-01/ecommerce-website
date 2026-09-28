@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4ee53d3e0e.js" crossorigin="anonymous"></script>
+    <title>Shop | MEN'S</title>
+</head>
+<body class="shop-page">
+    <header class="navbar">
+
+        <div class="logo">
+            MEN'S
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="clothing.html">Clothing</a>
+            <a href="footwear.html">Footwear</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="#">Lookbook</a>
+            
+        </nav>
+
+        <div class="nav-icons">
+
+            <button class="icon-btn">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </button>
+
+            <button class="icon-btn">
+                <span><i class="fa-regular fa-heart"></i></span>
+            </button>
+
+            <button class="icon-btn" onclick="openLoginPage()">
+                <span><i class="fa-solid fa-user"></i></span>
+            </button>
+
+            <button class="icon-btn" onclick="openCart()">
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+            </button>
+
+        </div>
+
+    </header>
+    <section class="shop-header">
+        <p>Our Collection</p>
+        <h1>Shop All</h1>
+        <span>
+            Discover our complete collection of modern menswear.
+        </span>
+    </section>
+
+    <section class="shop-controls">
+        
+        <div class="category-filters">
+            <button class="filter-btn">
+                All
+            </button>
+
+            <button class="filter-btn">
+                Clothing
+            </button>
+
+            <button class="filter-btn">
+                Footwear
+            </button>
+
+            <button class="filter-btn">
+                Accessories
+            </button>
+
+            <button class="filter-btn">
+                Sale
+            </button>
+        </div>
+
+        <div class="shop-sort">
+            <span>Sort by</span>
+
+            <select>
+                <option>Featured</option>
+                <option>Newest</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+            </select>
+        </div>
+
+    </section>
+
+    <section class="shop-products">
+        <div class="shop-products-header">
+            <p>Our Products</p>
+            <span>25 Products</span>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card" data-product-id="1">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/product-images/product-1.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Classic Overshirt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹2499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="2">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/product-images/product-2.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Premium T-Shirt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹3,999</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="3">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/product-images/product-3.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Cotton T-Shirt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹999</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="4">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/product-images/product-4.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Boxy Shirt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹1499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="5">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/product-images/product-5.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Nike Sneaker</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹7,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="6">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/clothing-images/hoodies.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Hoodie</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹1,999</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="7">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/clothing-images/jackets.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Leather Jacket</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹3,799</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="8">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/clothing-images/shirts.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Classy Shirt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹1,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="9">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/clothing-images/trousers.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Baggy Trouser</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹1,299</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="10">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/clothing-images/tshirts.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>T-Shirt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹2,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="11">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/footwear-images/boots.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Leather Boots</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹4,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="12">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/footwear-images/casual-shoes.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Casual Shoe</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹1,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="13">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/footwear-images/loafers.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Loafer Shoes</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹1,399</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="14">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/footwear-images/sneakers.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Sneaker</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹7,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="15">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/accessories-images/bags.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Premium Bag</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹6,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="16">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/accessories-images/belts.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Leather Belt</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹999</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="17">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/accessories-images/sunglasses.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Ray Ben Sunglass</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹11,499</span>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="18">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/accessories-images/watches.jpg" alt="classic overshirt">
+                </div>
+
+                <div class="product-info">
+                    <p class="product-category">OUTWEAR</p>
+                    <h3>Rolex Watch</h3>
+                </div>
+
+                <div class="product-price">
+                    <span>₹19,999</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <span class="page-dots">...</span>
+        <button class="page-btn">6</button>
+        <button class="next-btn">Next </button>
+
+    </div>
+
+    <footer class="footer">
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <div class="footer-logo">
+                MEN'S
+            </div>
+
+            <p>  Modern menswear designed for
+                the way you live, work and move.
+            </p>
+
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Shop</h3>
+
+            <a href="#">New Arrivals</a>
+            <a href="#">Clothing</a>
+            <a href="#">Footwear</a>
+            <a href="#">Accessories</a>
+            <a href="#">Sale</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Help</h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Returns & Exchanges</a>
+            <a href="#">Size Guide</a>
+            <a href="#">FAQ</a>
+
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>Stay in the loop</h3>
+            <p>
+                Subscribe for new arrivals,
+                exclusive offers and style inspiration.
+            </p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+
+                <button type="submit">  →</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © 2026 MEN'S. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+
+</footer>
+<script src="script.js"></script>
+<script>
+    function openCart(){
+        window.location.href = "cart.html";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+.accessories-page {
+    background-color: #f5f1ed;
+}
+
+.accessories-page .navbar {
+    position: relative;
+    background-color: #292522;
+}
+
+.accessories-header {
+    padding: 100px 5% 65px;
+    text-align: center;
+    background-color: #f5f1ed;
+}
+
+.accessories-header p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #81766e;
+    margin-bottom: 18px;
+}
+
+.accessories-header h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: #302b28;
+    margin-bottom: 18px;
+}
+
+.accessories-header span{
+    font-size: 14px;
+    color: #756b63;
+}
+
+.accessories-categories {
+    padding: 40px 5% 100px;
+}
+
+.accessories-categories .category-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.accessories-categories .category-header p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #81766e;
+    margin-bottom: 12px;
+}
+
+.accessories-categories .category-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #302b28;
+    margin: 0;
+}
+
+
+.accessories-category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+.accessories-category-card {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+
+.accessories-category-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+.accessories-category-card:hover img {
+    transform: scale(1.05);
+}

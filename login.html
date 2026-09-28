@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | MEN'S</title>
+    <script src="https://kit.fontawesome.com/4ee53d3e0e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.login-page {
+    background-color: #f5f1ed;
+}
+
+.login-page .navbar {
+    position: relative;
+    background-color: #292522;
+}
+
+.login-container {
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 55px 50px;
+    background-color: #eee8e2;
+}
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.login-heading p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #81766e;
+    margin-bottom: 15px;
+}
+
+
+.login-heading h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    font-weight: 400;
+    color: #302b28;
+    margin-bottom: 12px;
+}
+
+
+.login-heading span {
+    font-size: 13px;
+    color: #756b63;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.form-group label {
+    font-size: 11px;
+    color: #403934;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #d2c9c1;
+    outline: none;
+    background-color: transparent;
+    font-size: 12px;
+    color: #403934;
+}
+
+
+.form-group input:focus {
+    border-color: #302b28;
+}
+
+
+.form-group input::placeholder {
+    color: #aaa19a;
+}
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.password-label a {
+    font-size: 10px;
+    color: #756b63;
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    height: 52px;
+    margin-top: 10px;
+    border: none;
+    background-color: #302b28;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.login-btn:hover {
+    background-color: #403934;
+}
+
+.register-link {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #756b63;
+}
+
+
+.register-link a {
+    color: #302b28;
+    text-decoration: underline;
+}
+    </style>
+
+</head>
+
+
+<body class="login-page">
+    <header class="navbar">
+        <div class="logo">
+            MEN'S
+        </div>
+
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="clothing.html">Clothing</a>
+            <a href="footwear.html">Footwear</a>
+            <a href="accessories.html">Accessories</a>
+        </nav>
+
+
+        <div class="nav-icons">
+            <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
+            <button class="icon-btn" onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+    </header>
+
+    <main class="login-container">
+        <section class="login-box">
+            <div class="login-heading">
+                <p>WELCOME BACK</p>
+                <h1>Sign In</h1>
+                <span>
+                    Sign in to access your account.
+                </span>
+            </div>
+
+            <form class="login-form" id="authForm">
+                <div class="form-group">
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <div class="password-label">
+                        <label for="password">
+                            Password
+                        </label>
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                    >
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Sign In
+                </button>
+
+            </form>
+
+            <div class="register-link">
+                <p>
+                    Don't have an account?
+                </p>
+                <a href="#" id="switchAuth">
+                    Create Account
+                </a>
+            </div>
+
+        </section>
+
+
+    </main>
+<script src="script.js"></script>
+<script>
+
+const authForm = document.querySelector("#authForm");
+const switchAuth = document.querySelector("#switchAuth");
+let isRegisterMode = false;
+
+if (switchAuth) {
+    switchAuth.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        isRegisterMode = !isRegisterMode;
+        const heading = document.querySelector(".login-heading h1");
+        const welcomeText = document.querySelector(".login-heading p");
+        const description = document.querySelector(".login-heading span");
+        const button = document.querySelector(".login-btn");
+        const registerText = document.querySelector(".register-link p");
+
+        if (isRegisterMode) {
+            welcomeText.textContent = "CREATE ACCOUNT";
+            heading.textContent = "Register";
+            description.textContent = "Create an account to get started.";
+            button.textContent = "Create Account";
+            registerText.textContent = "Already have an account?";
+            switchAuth.textContent = "Sign In";
+
+            const passwordGroup = document.querySelector(
+                "#password"
+            ).parentElement;
+
+            if (!document.querySelector("#name")) {
+                const nameGroup = document.createElement("div");
+                nameGroup.classList.add("form-group");
+                nameGroup.innerHTML = `
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+                `;
+                authForm.insertBefore(nameGroup, passwordGroup);
+
+            }
+
+        } else {
+            welcomeText.textContent = "WELCOME BACK";
+            heading.textContent = "Sign In";
+            description.textContent =
+                "Sign in to access your account.";
+            button.textContent = "Sign In";
+            registerText.textContent =
+                "Don't have an account?";
+            switchAuth.textContent =
+                "Create Account";
+            const nameInput = document.querySelector("#name");
+            if (nameInput) {
+                nameInput.parentElement.remove();
+
+            }
+
+        }
+
+    });
+
+}
+
+if (authForm) {
+
+    authForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const email =
+            document.querySelector("#email").value.trim();
+
+        const password =
+            document.querySelector("#password").value.trim();
+
+        if (isRegisterMode) {
+            const name =
+                document.querySelector("#name").value.trim();
+
+            if (name === "" || email === "" || password === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            let users =
+                JSON.parse(localStorage.getItem("users")) || [];
+
+            const existingUser =
+                users.find(user => user.email === email);
+
+            if (existingUser) {
+                alert("Account already exists with this email");
+                return;
+            }
+
+            const newUser = {
+                name: name,
+                email: email,
+                password: password
+            };
+
+            users.push(newUser);
+
+            localStorage.setItem(
+                "users",
+                JSON.stringify(users)
+            );
+
+            alert("Account created successfully");
+            switchAuth.click();
+            document.querySelector("#email").value = "";
+            document.querySelector("#password").value = "";
+            return;
+        }
+
+        if (email === "" || password === "") {
+            alert("Please enter email and password");
+            return;
+        }
+
+        const users =
+            JSON.parse(localStorage.getItem("users")) || [];
+
+        const user = users.find((user) => {
+            return (
+                user.email === email &&
+                user.password === password
+            );
+
+        });
+
+        if (user) {
+            localStorage.setItem(
+                "loggedInUser",
+                JSON.stringify(user)
+            );
+            alert("Login successful");
+            window.location.href = "index.html";
+
+        } else {
+
+            alert("Invalid email or password");
+
+        }
+
+    });
+
+}
+    
+</script>
+ 
+</body>
+
+</html>

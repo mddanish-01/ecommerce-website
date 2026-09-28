@@ -1,0 +1,91 @@
+.footwear-page {
+    background-color: #f5f1ed;
+}
+
+.footwear-page .navbar {
+    position: relative;
+    background-color: #292522;
+}
+
+.footwear-header {
+    padding: 100px 5% 65px;
+    text-align: center;
+    background-color: #f5f1ed;
+}
+
+
+.footwear-header p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #81766e;
+    margin-bottom: 18px;
+}
+
+
+.footwear-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: #302b28;
+    margin-bottom: 18px;
+}
+
+
+.footwear-header span {
+    font-size: 14px;
+    color: #756b63;
+}
+
+.footwear-categories {
+    padding: 30px 5% 100px;
+}
+
+.footwear-categories .category-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+.footwear-categories .category-header p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #81766e;
+    margin-bottom: 12px;
+}
+
+
+.footwear-categories .category-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #302b28;
+    margin: 0;
+}
+
+.footwear-category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    width: 100%;
+}
+
+.footwear-category-card {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+
+.footwear-category-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+.footwear-category-card:hover img {
+    transform: scale(1.05);
+}

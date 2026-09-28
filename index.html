@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEN'S | Modern Menswear</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4ee53d3e0e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            MEN'S
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="clothing.html">Clothing</a>
+            <a href="footwear.html">Footwear</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="#">Lookbook</a>
+            
+        </nav>
+
+        <div class="nav-icons">
+
+            <button class="icon-btn">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </button>
+
+            <button class="icon-btn">
+                <span><i class="fa-regular fa-heart"></i></span>
+            </button>
+
+            <button class="icon-btn" onclick="openLoginPage()">
+                <span><i class="fa-solid fa-user"></i></span>
+            </button>
+
+            <button class="icon-btn" >
+                <span onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i></span>
+            </button>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-small-text">
+                    MODERN MENSWEAR
+                </p>
+
+                <h1>
+                    Define<br>
+                    Your Style
+                </h1>
+
+                <p class="hero-description">
+                    Modern Menswear for Every Occasion
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="shop.html" class="btn primary-btn">
+                        Shop Now
+                    </a>
+
+                    <button onclick="goToSection()"  class="btn secondary-btn">
+                        New Arrivals
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<section class="essentials">
+
+    <div class="section-heading">
+        <p>EXPLORE OUR COLLECTION</p>
+        <h2>Essentials</h2>
+    </div>
+
+    <div class="category-grid">
+
+        <a href="shop.html" class="category-card">
+            <img src="images/casual.png" alt="Casual Wear">
+            <div class="category-overlay">
+                <h3>Casual Wear</h3>
+                <span>Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html" class="category-card">
+            <img src="images/formal.jpg" alt="Formal Wear">
+            <div class="category-overlay">
+                <h3>Formal Wear</h3>
+                <span>Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html" class="category-card">
+            <img src="images/street.jpg" alt="Street Style">
+            <div class="category-overlay">
+                <h3>Street Style</h3>
+                <span>Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html" class="category-card">
+            <img src="images/outwear.jpg" alt="Outerwear">
+            <div class="category-overlay">
+                <h3>Outerwear</h3>
+                <span>Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="accessories.html" class="category-card">
+            <img src="images/accessories.jpg" alt="Accessories">
+            <div class="category-overlay">
+                <h3>Accessories</h3>
+                <span>Shop Now →</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="collection-banner">
+    <div class="collection-content">
+        <p class="collection-label">
+            THE NEW COLLECTION
+        </p>
+        <h2>
+            Effortless<br>
+            Elegance
+        </h2>
+        <p class="collection-description">
+            Refined pieces designed for the modern man.
+            Discover timeless styles made for every occasion.
+        </p>
+        <a href="shop.html" class="collection-btn">
+            Explore Collection →
+        </a>
+    </div>
+</section>
+
+
+
+<section class="trending" id="new-arrival">
+    <div class="trending-header">
+        <div>
+            <p class="section-label">CURATED FOR YOU</p>
+            <h2>Trending Now</h2>
+        </div>
+        <a href="shop.html" class="view-all">
+            View All →
+        </a>
+    </div>
+
+    <div class="product-grid">
+        <article class="product-card" data-product-id="1">
+            <div class="product-image">
+                <span class="product-badge">
+                    NEW
+                </span>
+                <button class="wishlist-btn">
+                    ♡
+                </button>
+                <img src="images/product-images/product-1.jpg"
+                     alt="Classic Overshirt">
+            </div>
+            <div class="product-info">
+                <p class="product-category">
+                    OUTERWEAR
+                </p>
+                <h3>Classic Overshirt</h3>
+                <div class="product-price">
+                    <span>₹2,499</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card" data-product-id="2">
+            <div class="product-image">
+                <button class="wishlist-btn">
+                    ♡
+                </button>
+                <img src="images/product-images/product-2.jpg"
+                     alt="Premium T-Shirt">
+            </div>
+            <div class="product-info">
+                <p class="product-category">
+                    T-SHIRTS
+                </p>
+                <h3>Premium Cotton Tee</h3>
+                <div class="product-price">
+                    <span>₹1,299</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card" data-product-id="3">
+            <div class="product-image">
+                <span class="product-badge">
+                    BESTSELLER
+                </span>
+                <button class="wishlist-btn">
+                    ♡
+                </button>
+                <img src="images/product-images/product-3.jpg"
+                     alt="Relaxed Shirt">
+            </div>
+            <div class="product-info">
+                <p class="product-category">
+                    SHIRTS
+                </p>
+                <h3>Relaxed Linen Shirt</h3>
+                <div class="product-price">
+                    <span>₹1,899</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card" data-product-id="4">
+            <div class="product-image">
+                <button class="wishlist-btn">
+                    ♡
+                </button>
+                <img src="images/product-images/product-4.jpg"
+                     alt="Slim Fit Trousers">
+            </div>
+            <div class="product-info">
+                <p class="product-category">
+                    TROUSERS
+                </p>
+                <h3>Slim Fit Trousers</h3>
+                <div class="product-price">
+                    <span>₹2,199</span>
+                </div>
+            </div>
+        </article>
+
+       <article class="product-card" data-product-id="5">
+            <div class="product-image">
+                <span class="product-badge">
+                    NEW
+                </span>
+                <button class="wishlist-btn">
+                    ♡
+                </button>
+                <img src="images/product-images/product-5.jpg"
+                     alt="Leather Sneakers">
+            </div>
+            <div class="product-info">
+                <p class="product-category">
+                    FOOTWEAR
+                </p>
+                <h3>Minimal Leather Sneakers</h3>
+                <div class="product-price">
+                    <span>₹3,499</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <!-- Brand -->
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                MEN'S
+            </div>
+
+            <p>
+                Modern menswear designed for
+                the way you live, work and move.
+            </p>
+
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Shop</h3>
+
+            <a href="#">New Arrivals</a>
+            <a href="#">Clothing</a>
+            <a href="#">Footwear</a>
+            <a href="#">Accessories</a>
+            <a href="#">Sale</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Help</h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Returns & Exchanges</a>
+            <a href="#">Size Guide</a>
+            <a href="#">FAQ</a>
+
+        </div>
+
+       <div class="footer-newsletter">
+
+            <h3>Stay in the loop</h3>
+
+            <p>
+                Subscribe for new arrivals,
+                exclusive offers and style inspiration.
+            </p>
+
+            <form class="newsletter-form">
+
+                <input
+                    type="email"
+                    placeholder="Your email address"
+                >
+
+                <button type="submit">
+                    →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 MEN'S. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+</footer>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
