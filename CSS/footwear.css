@@ -89,3 +89,52 @@
 .footwear-category-card:hover img {
     transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+
+    .footwear-header {
+        padding: 60px 5% 40px;
+    }
+
+    .footwear-header p {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .footwear-header h1 {
+        font-size: 42px;
+        margin-bottom: 14px;
+    }
+
+    .footwear-header span {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .footwear-categories {
+        padding: 20px 5% 60px;
+    }
+
+    .footwear-categories .category-header {
+        margin-bottom: 25px;
+    }
+
+    .footwear-categories .category-header p {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .footwear-categories .category-header h2 {
+        font-size: 32px;
+    }
+
+    .footwear-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .footwear-category-card {
+        height: 280px;
+    }
+}

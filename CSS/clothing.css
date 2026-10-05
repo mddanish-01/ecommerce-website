@@ -116,3 +116,44 @@
     font-size: 11px;
     letter-spacing: 1px;
 }
+
+@media (max-width: 1024px) {
+    .clothing-category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .clothing-header {
+        padding: 60px 20px 40px;
+    }
+
+    .clothing-header h1 {
+        font-size: 40px;
+    }
+
+    .clothing-categories {
+        padding: 30px 20px 60px;
+    }
+
+    .category-header h2 {
+        font-size: 30px;
+    }
+
+    .clothing-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .clothing-category-card {
+        height: 260px;
+    }
+
+    .clothing-category-card:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+
+    .category-overlay h3 {
+        font-size: 18px;
+    }
+}
