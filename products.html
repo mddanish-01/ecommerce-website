@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="CSS/accessories.css">
     <script src="https://kit.fontawesome.com/4ee53d3e0e.js" crossorigin="anonymous"></script>
-    <title>Accessories | MEN'S</title>
+    <title>Products | MEN'S</title>
 </head>
-<body class="accessories-page">
-        <header class="navbar">
+<body class="shop-page">
+    <header class="navbar">
 
         <div class="logo">
             MEN'S
@@ -17,10 +16,10 @@
 
         <nav class="nav-links">
             <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
+            <a href="shop.html" class="active">Shop</a>
             <a href="clothing.html">Clothing</a>
             <a href="footwear.html">Footwear</a>
-            <a href="accessories.html" class="active">Accessories</a>
+            <a href="accessories.html">Accessories</a>
             <a href="#">Lookbook</a>
             
         </nav>
@@ -50,105 +49,31 @@
         </button>
 
     </header>
-
-    <section class="accessories-header">
-
-        <p> THE FINISHING TOUCH</p>
-        <h1>Accessories</h1>
-
-        <span>
-            The details that complete your style.
-        </span>
+    
+    <section class="shop-header">
+        <p>Our Collection</p>
+        <h1 id="page-title">Products</h1>
+        <span id="page-description"></span>
     </section>
 
-<section class="accessories-categories">
+    <section class="shop-products">
+        <div class="shop-products-header">
+            <p>Our Products</p>
+            <span id="products-count"></span>
+        </div>
 
-    <div class="category-header">
+        <div class="product-grid" id="products-grid"></div>
+    </section>
 
-        <p>SHOP BY CATEGORY</p>
-
-        <h2>Complete Your Look</h2>
-
-    </div>
-
-
-    <div class="accessories-category-grid">
-
-
-        <a href="products.html?category=watches" class="accessories-category-card">
-
-            <img src="images/accessories-images/watches.jpg" alt="Men's Watches">
-
-            <div class="category-overlay">
-
-                <h3>Watches</h3>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-        <a href="products.html?category=sunglasses" class="accessories-category-card">
-
-            <img src="images/accessories-images/sunglasses.jpg" alt="Men's Sunglasses">
-
-            <div class="category-overlay">
-
-                <h3>Sunglasses</h3>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-
-        <a href="products.html?category=bags" class="accessories-category-card">
-
-            <img src="images/accessories-images/bags.jpg" alt="Men's Bags">
-
-            <div class="category-overlay">
-
-                <h3>Bags</h3>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-        <a href="products.html?category=belts" class="accessories-category-card">
-
-            <img src="images/accessories-images/belts.jpg" alt="Men's Belts">
-
-            <div class="category-overlay">
-
-                <h3>Belts</h3>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<footer class="footer">
-
+    <footer class="footer">
     <div class="footer-main">
 
         <div class="footer-brand">
-
             <div class="footer-logo">
                 MEN'S
             </div>
 
-            <p>
-                Modern menswear designed for
+            <p>  Modern menswear designed for
                 the way you live, work and move.
             </p>
 
@@ -184,34 +109,22 @@
 
         </div>
 
-       <div class="footer-newsletter">
-
+        <div class="footer-newsletter">
             <h3>Stay in the loop</h3>
-
             <p>
                 Subscribe for new arrivals,
                 exclusive offers and style inspiration.
             </p>
-
             <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
 
-                <input
-                    type="email"
-                    placeholder="Your email address"
-                >
-
-                <button type="submit">
-                    →
-                </button>
-
+                <button type="submit">  →</button>
             </form>
-
         </div>
 
     </div>
 
     <div class="footer-bottom">
-
         <p>
             © 2026 MEN'S. All rights reserved.
         </p>
@@ -220,15 +133,10 @@
             <a href="#">Privacy Policy</a>
             <a href="#">Terms & Conditions</a>
         </div>
-
     </div>
 
 </footer>
 <script src="script.js"></script>
-<script>
-    function openCart(){
-        window.location.href = "cart.html"
-    }
-</script>
+<script src="products-page.js"></script>
 </body>
 </html>

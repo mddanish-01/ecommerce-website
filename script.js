@@ -22,148 +22,361 @@ function goToSection(id){
 
 const products = [
     {
-        id: 1,
-        name: "Classic Overshirt",
-        price: 2499,
-        image: "images/product-images/product-1.jpg",
-        category: "clothing"
+     id: 1,
+     name: "Classic Overshirt", 
+     price: 2499, image: "images/product-images/product-1.jpg", 
+     category: "clothing",
+      subcategory: "shirts" 
     },
-
-    {
-        id: 2,
-        name: "Premium T-shirt",
-        price: 999,
-        image: "images/product-images/product-2.jpg",
-        category: "clothing"
+    { 
+        id: 2, 
+        name: "Premium T-shirt", 
+        price: 999, 
+        image: "images/product-images/product-2.jpg", 
+        category: "clothing", 
+        subcategory: "tshirts" 
     },
+    { 
+        id: 3, 
+        name: "Cotton T-Shirt", 
+        price: 2499, 
+        image: "images/product-images/product-3.jpg", 
+        category: "clothing", 
+        subcategory: "tshirts" 
 
-    {
-        id: 3,
-        name: "Cotton T-Shirt",
-        price: 2499,
-        image: "images/product-images/product-3.jpg",
-        category: "clothing"
     },
+    { 
+        id: 4, 
+        name: "Boxy Shirt", 
+        price: 1499, 
+        image: "images/product-images/product-4.jpg", 
+        category: "clothing", 
+        subcategory: "shirts" 
 
-    {
-        id: 4,
-        name: "Boxy Shirt",
-        price: 1499,
-        image: "images/product-images/product-4.jpg",
-        category: "clothing"
     },
+    { 
+        id: 5, 
+        name: "Nike Sneaker", 
+        price: 7499, 
+        image: "images/product-images/product-5.jpg", 
+        category: "footwear", 
+        subcategory: "sneakers" 
 
-    {
-        id: 5,
-        name: "Nike Sneaker",
+    },
+    { 
+        id: 6, 
+        name: "Hoodie", 
+        price: 1999, 
+        image: "images/clothing-images/hoodies.jpg", 
+        category: "clothing", 
+        subcategory: "hoodies" 
+
+    },
+    { 
+        id: 7, 
+        name: "Leather Jacket", 
+        price: 3799, 
+        image: "images/clothing-images/jackets.jpg", 
+        category: "clothing", 
+        subcategory: "jackets" 
+
+    },
+    { 
+        id: 8, 
+        name: "Classy Shirt", 
+        price: 1499, 
+        image: "images/clothing-images/shirts.jpg", 
+        category: "clothing", 
+        subcategory: "shirts" 
+
+    },
+    { 
+        id: 9, 
+        name: "Baggy Trouser", 
+        price: 1299, 
+        image: "images/clothing-images/trousers.jpg", 
+        category: "clothing", 
+        subcategory: "trousers" 
+
+    },
+    { 
+        id: 10, 
+        name: "T-shirt", 
+        price: 2499, 
+        image: "images/clothing-images/tshirts.jpg", 
+        category: "clothing", 
+        subcategory: "tshirts" 
+
+    },
+    { 
+        id: 11, 
+        name: "Leather Boots", 
+        price: 4499, 
+        image: "images/footwear-images/boots.jpg", 
+        category: "footwear", 
+        subcategory: "boots" 
+
+    },
+    { 
+        id: 12, 
+        name: "Casual Shoe", 
+        price: 1499, 
+        image: "images/footwear-images/casual-shoes.jpg", 
+        category: "footwear", 
+        subcategory: "casual-shoes" 
+
+    },
+    { 
+        id: 13, 
+        name: "Loafer Shoes", 
+        price: 1399, 
+        image: "images/footwear-images/loafers.jpg", 
+        category: "footwear", 
+        ubcategory: "loafers" 
+
+    },
+    { 
+        id: 14, 
+        name: "Sneaker", 
         price: 7499,
-        image: "images/product-images/product-5.jpg",
-        category: "footwear"
+        image: "images/footwear-images/sneakers.jpg", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    { 
+        id: 15, 
+        name: "Premium Bag", 
+        price: 6499, 
+        image: "images/accessories-images/bags.jpg", 
+        category: "accessories", 
+        subcategory: "bags" 
+
+    },
+    { 
+        id: 16, 
+        name: "Leather Belt", 
+        price: 999, 
+        image: "images/accessories-images/belts.jpg", 
+        category: "accessories", 
+        subcategory: "belts" 
+
+    },
+    { 
+        id: 17, 
+        name: "Ray ben Sunglass", 
+        price: 11499, 
+        image: "images/accessories-images/sunglasses.jpg", 
+        category: "accessories", 
+        subcategory: "sunglasses" 
+
+    },
+    { 
+        id: 18, 
+        name: "Classic Watch", 
+        price: 19999, 
+        image: "images/accessories-images/watches.jpg", 
+        category: "accessories", 
+        subcategory: "watches" 
+
     },
 
     {
-        id: 6,
-        name: "Hoodie",
-        price: 1999,
-        image: "images/clothing-images/hoodies.jpg",
-        category: "clothing"
+        id: 19, 
+        name: "Classic White Tee",
+        price: 799, 
+        image: "images/tshirts/tshirt-1.avif", 
+        category: "clothing", 
+        subcategory: "tshirts" 
+
+    },
+    {
+        id: 20, 
+        name: "Oversized Black Tee", 
+        price: 1199, 
+        image: "images/tshirts/tshirt-2.avif",
+         category: "clothing", 
+        subcategory: "tshirts" 
+
+    },
+    {
+        id: 21, 
+        name: "Striped Cotton Tee", 
+        price: 1099, 
+        image: "images/tshirts/tshirt-3.avif", 
+        category: "clothing", 
+        subcategory: "tshirts" 
+
+    },
+    
+    {   id: 22, 
+        name: "Polo T-shirt", 
+        price: 1599, 
+        image: "images/tshirts/tshirt-4.avif", 
+        category: "clothing", 
+        subcategory: "tshirts" },
+    {
+        id: 23, 
+        name: "Graphic Print Tee", 
+        price: 1299, 
+        image: "images/tshirts/tshirt-5.avif", 
+        category: "clothing", 
+        subcategory: "tshirts" 
+
+    },
+    {
+        id: 24, 
+        name: "V-Neck Tee", 
+        price: 899, 
+        image: "images/tshirts/tshirt-6.avif", 
+        category: "clothing", 
+        subcategory: "tshirts" },
+    {
+        id: 25, 
+        name: "Henley T-shirt", 
+        price: 1399, 
+        image: "images/tshirts/tshirt-7.avif", 
+        category: "clothing", 
+        subcategory: "tshirts" 
+
     },
 
     {
-        id: 7,
-        name: "Leather Jacket",
-        price: 3799,
-        image: "images/clothing-images/jackets.jpg",
-        category: "clothing"
+        id: 26, 
+        name: "Urban Runner", 
+        price: 3499, 
+        image: "images/sneakers/sneaker-1.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    {
+        id: 27, 
+        name: "Street White Sneaker", 
+        price: 4299, 
+        image: "images/sneakers/sneaker-2.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    {
+        id: 28, 
+        name: "Classic Canvas Sneaker", 
+        price: 1999, 
+        image: "images/sneakers/sneaker-3.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    {
+        id: 29, 
+        name: "Court Low Sneaker", 
+        price: 3799, 
+        image: "images/sneakers/sneaker-4.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    
+    { 
+        id: 30, 
+        name: "Retro Trainer", 
+        price: 4999, 
+        image: "images/sneakers/sneaker-5.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    {
+        id: 31, 
+        name: "Slip-on Sneaker", 
+        price: 2299, 
+        image: "images/sneakers/sneaker-6.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    {
+        id: 32, 
+        name: "Sport Runner", 
+        price: 5499, 
+        image: "images/sneakers/sneaker-7.avif", 
+        category: "footwear", 
+        subcategory: "sneakers" 
+
+    },
+    {
+        id: 33, 
+        name: "Minimal Leather Sneaker", 
+        price: 5999, 
+        image: "images/sneakers/sneaker-8.avif", category: "footwear", 
+        subcategory: "sneakers" 
+
     },
 
     {
-        id: 8,
-        name: "Classy Shirt",
-        price: 1499,
-        image: "images/clothing-images/shirts.jpg",
-        category: "clothing"
-    },
-
+        id: 34, 
+        name: "Classic Leather Watch", 
+        price: 4999, 
+        image: "images/watches/watch-1.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 9,
-        name: "Baggy Trouser",
-        price: 1299,
-        image: "images/clothing-images/trousers.jpg",
-        category: "clothing"
-    },
-
+        id: 35, 
+        name: "Chronograph Steel", 
+        price: 8999, 
+        image: "images/watches/watch-2.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 10,
-        name: "T-shirt",
-        price: 2499,
-        image: "images/clothing-images/tshirts.jpg",
-        category: "clothing"
-    },
-
+        id: 36, 
+        name: "Minimal Dial Watch",
+         price: 3499, 
+        image: "images/watches/watch-3.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 11,
-        name: "Leather Boots",
-        price: 4499,
-        image: "images/footwear-images/boots.jpg",
-        category: "footwear"
-    },
-
+        id: 37, 
+        name: "Digital Sport Watch", 
+        price: 2499, 
+        image: "images/watches/watch-4.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 12,
-        name: "Casual Shoe",
-        price: 1499,
-        image: "images/footwear-images/casual-shoes.jpg",
-        category: "footwear"
-    },
-
+        id: 38, 
+        name: "Rose Gold Watch", 
+        price: 6999, 
+        image: "images/watches/watch-5.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 13,
-        name: "Loafer Shoes",
-        price: 1399,
-        image: "images/footwear-images/loafers.jpg",
-        category: "footwear"
-    },
-
+        id: 39, 
+        name: "Black Edition Watch", 
+        price: 5499, 
+        image: "images/watches/watch-6.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 14,
-        name: "Sneaker",
-        price: 7499,
-        image: "images/footwear-images/sneakers.jpg",
-        category: "footwear"
-    },
-
+        id: 40, 
+        name: "Smart Fit Watch", 
+        price: 3999, 
+        image: "images/watches/watch-7.avif", 
+        category: "accessories",
+         subcategory: "watches" },
     {
-        id: 15,
-        name: "Premium Bag",
-        price: 6499,
-        image: "images/accessories-images/bags.jpg",
-        category: "accessories"
-    },
-
+        id: 41, 
+        name: "Vintage Gold Watch", 
+        price: 7499, 
+        image: "images/watches/watch-8.avif", 
+        category: "accessories", 
+        subcategory: "watches" },
     {
-        id: 16,
-        name: "Leather Belt",
-        price: 999,
-        image: "images/accessories-images/belts.jpg",
-        category: "accessories"
-    },
-
-    {
-        id: 17,
-        name: "Ray ben Sunglass",
-        price: 11499,
-        image: "images/accessories-images/sunglasses.jpg",
-        category: "accessories"
-    },
-
-    {
-        id: 18,
-        name: "Classic Watch",
-        price: 19999,
-        image: "images/accessories-images/watches.jpg",
-        category: "accessories"
-    }
+        id: 42, 
+        name: "Automatic Watch", 
+        price: 12999, 
+        image: "images/watches/watch-9.avif", 
+        category: "accessories", 
+        subcategory: "watches" }
 ];
 
 const productCards = document.querySelectorAll(".product-card");
