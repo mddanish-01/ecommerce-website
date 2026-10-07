@@ -66,6 +66,7 @@ if (productsGrid) {
                     <div class="product-image">
                         <button class="wishlist-btn">♡</button>
                         <img src="${item.image}" alt="${item.name}">
+                        <button class="quick-add-btn" data-product-id="${item.id}">Add to Cart</button>
                     </div>
 
                     <div class="product-info">
@@ -86,13 +87,65 @@ if (productsGrid) {
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("click", function (event) {
 
-            // agar heart button dabaya, to product page mat kholo
             if (event.target.classList.contains("wishlist-btn")) {
                 return;
             }
 
             const productId = cards[i].dataset.productId;
             window.location.href = "product.html?id=" + productId;
+        });
+    }
+
+    const quickAddButtons = document.querySelectorAll(".quick-add-btn");
+
+    for (let i = 0; i < quickAddButtons.length; i++) {
+        quickAddButtons[i].addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            const productId = Number(quickAddButtons[i].dataset.productId);
+
+            let selectedProduct = null;
+            for (let j = 0; j < products.length; j++) {
+                if (products[j].id === productId) {
+                    selectedProduct = products[j];
+                }
+            }
+
+            if (selectedProduct === null) {
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const defaultSize = "M";
+
+            let alreadyInCart = false;
+
+            for (let k = 0; k < cart.length; k++) {
+                if (cart[k].id === selectedProduct.id && cart[k].size === defaultSize) {
+                    cart[k].quantity = Number(cart[k].quantity) + 1;
+                    alreadyInCart = true;
+                }
+            }
+
+            if (!alreadyInCart) {
+                cart.push({
+                    id: selectedProduct.id,
+                    name: selectedProduct.name,
+                    price: selectedProduct.price,
+                    image: selectedProduct.image,
+                    size: defaultSize,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            quickAddButtons[i].textContent = "Added ✓";
+
+            setTimeout(function () {
+                quickAddButtons[i].textContent = "Add to Cart";
+            }, 1500);
         });
     }
 }
