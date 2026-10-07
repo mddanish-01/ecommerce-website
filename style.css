@@ -454,6 +454,40 @@ button {
     transform: scale(1.08);
 }
 
+.quick-add-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background-color: #2f2925;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 3;
+    transform: translateY(100%);   
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.product-card:hover .quick-add-btn {
+    transform: translateY(0);      
+}
+
+.quick-add-btn:hover {
+    background-color: black;
+}
+
+@media (hover: none) {
+    .quick-add-btn {
+        transform: translateY(0);
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
 .product-info {
     padding-top: 17px;
 }
@@ -881,8 +915,6 @@ button {
         font-size: 12px;
     }
 
-
-    /* ESSENTIALS */
     .essentials {
         padding: 65px 20px;
     }
@@ -1016,8 +1048,6 @@ button {
         padding: 5px 7px;
     }
 
-
-    /* FOOTER */
     .footer-main {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1094,8 +1124,6 @@ button {
         justify-content: space-between;
     }
 
-
-    /* SHOP PRODUCTS */
     .shop-products {
         padding: 40px 20px 70px;
     }
@@ -1118,8 +1146,6 @@ button {
         gap: 30px 10px;
     }
 
-
-    /* PAGINATION */
     .pagination {
         padding: 0 20px 70px;
     }
