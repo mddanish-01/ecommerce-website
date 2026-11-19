@@ -25,21 +25,32 @@ if (productsGrid) {
         sunglasses: "Sunglasses"
     };
 
+    const searchText = params.get("search");
+
     let filteredProducts = [];
 
-    if (selectedCategory) {
+    if (searchText) {
+        const text = searchText.toLowerCase();
+
+        filteredProducts = products.filter(function (item) {
+            return item.name.toLowerCase().includes(text) ||
+                item.subcategory.toLowerCase().includes(text);
+        });
+
+    }   else if(selectedCategory) {
 
         filteredProducts = products.filter(function (item) {
             return item.subcategory === selectedCategory;
         });
-    } else {
-
+    }   else {
         filteredProducts = products;
     }
 
     let title = "All Products";
 
-    if (selectedCategory && categoryNames[selectedCategory]) {
+    if (searchText) {
+        title = "Results for “" + searchText + "”";
+    } else if (selectedCategory && categoryNames[selectedCategory]) {
         title = categoryNames[selectedCategory];
     }
 

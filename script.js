@@ -19,6 +19,28 @@ function goToSection(id){
     document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
+const searchBtn = document.querySelector("#search-btn");
+const searchBox = document.querySelector("#search-box");
+const searchInput = document.querySelector("#search-input");
+
+if (searchBtn && searchBox && searchInput) {
+
+    searchBtn.addEventListener("click", () => {
+        searchBox.classList.toggle("open");
+        searchInput.focus();
+    });
+
+    searchInput.addEventListener("keydown", (event) => {
+        if(event.key === "Enter") {
+            const text = searchInput.value.trim();
+
+            if (text !== "") {
+                window.location.href = "products.html?search=" + encodeURIComponent(text);
+            }
+        }
+    });
+}
+
 
 const products = [
     {
@@ -132,7 +154,7 @@ const products = [
         price: 1399, 
         image: "images/footwear-images/loafers.jpg", 
         category: "footwear", 
-        ubcategory: "loafers" 
+        subcategory: "loafers" 
 
     },
     { 
