@@ -5,9 +5,12 @@ if (productsGrid) {
     const pageTitle = document.querySelector("#page-title");
     const pageDescription = document.querySelector("#page-description");
     const productsCount = document.querySelector("#products-count");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const sortSelect = document.querySelector("#sort-select");
 
     const params = new URLSearchParams(window.location.search);
     const selectedCategory = params.get("category");
+    const searchText = params.get("search");
 
     const categoryNames = {
         tshirts: "T-Shirts",
@@ -25,47 +28,87 @@ if (productsGrid) {
         sunglasses: "Sunglasses"
     };
 
-    const searchText = params.get("search");
+    let activeFilter = "all";
+    let activeSort = "featured";
 
-    let filteredProducts = [];
 
-    if (searchText) {
-        const text = searchText.toLowerCase();
+    function getProducts() {
 
-        filteredProducts = products.filter(function (item) {
-            return item.name.toLowerCase().includes(text) ||
-                item.subcategory.toLowerCase().includes(text);
-        });
+        let list = products.slice();
 
-    }   else if(selectedCategory) {
+        if (searchText) {
+            const text = searchText.toLowerCase();
 
-        filteredProducts = products.filter(function (item) {
-            return item.subcategory === selectedCategory;
-        });
-    }   else {
-        filteredProducts = products;
+            list = list.filter(function (item) {
+                const name = (item.name || "").toLowerCase();
+                const sub = (item.subcategory || "").toLowerCase();
+                return name.includes(text) || sub.includes(text);
+            });
+
+        } else if (selectedCategory) {
+            list = list.filter(function (item) {
+                return item.subcategory === selectedCategory;
+            });
+        }
+
+        if (activeFilter !== "all") {
+            list = list.filter(function (item) {
+                return item.category === activeFilter;
+            });
+        }
+
+        if (activeSort === "low") {
+            list.sort(function (a, b) {
+                return a.price - b.price;
+            });
+        } else if (activeSort === "high") {
+            list.sort(function (a, b) {
+                return b.price - a.price;
+            });
+        } else if (activeSort === "newest") {
+            list.sort(function (a, b) {
+                return b.id - a.id;
+            });
+        }
+
+        return list;
     }
 
-    let title = "All Products";
 
-    if (searchText) {
-        title = "Results for “" + searchText + "”";
-    } else if (selectedCategory && categoryNames[selectedCategory]) {
-        title = categoryNames[selectedCategory];
-    }
+    function showProducts() {
 
-    pageTitle.textContent = title;
-    pageDescription.textContent = "Explore our latest collection.";
-    productsCount.textContent = filteredProducts.length + " Products";
+        const list = getProducts();
 
-    productsGrid.innerHTML = ""; 
+        if (pageTitle) {
+            let title = "All Products";
 
-    if (filteredProducts.length === 0) {
-        productsGrid.innerHTML = "<p>No products found.</p>";
-    } else {
-        for (let i = 0; i < filteredProducts.length; i++) {
+            if (searchText) {
+                title = "Results for “" + searchText + "”";
+            } else if (selectedCategory && categoryNames[selectedCategory]) {
+                title = categoryNames[selectedCategory];
+            }
 
-            const item = filteredProducts[i];
+            pageTitle.textContent = title;
+        }
+
+        if (pageDescription) {
+            pageDescription.textContent = "Explore our latest collection.";
+        }
+
+        if (productsCount) {
+            productsCount.textContent = list.length + " Products";
+        }
+
+        productsGrid.innerHTML = "";
+
+        if (list.length === 0) {
+            productsGrid.innerHTML = "<p>No products found.</p>";
+            return;
+        }
+
+        for (let i = 0; i < list.length; i++) {
+
+            const item = list[i];
 
             let subcategoryName = categoryNames[item.subcategory];
             if (!subcategoryName) {
@@ -77,7 +120,7 @@ if (productsGrid) {
                     <div class="product-image">
                         <button class="wishlist-btn">♡</button>
                         <img src="${item.image}" alt="${item.name}">
-                        <button class="quick-add-btn" data-product-id="${item.id}">Add to Cart</button>
+                        <button class="quick-add-btn">Add to Cart</button>
                     </div>
 
                     <div class="product-info">
@@ -91,72 +134,64 @@ if (productsGrid) {
                 </article>
             `;
         }
+
+        syncWishlistButtons();
     }
 
-    const cards = document.querySelectorAll(".product-card");
 
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("click", function (event) {
+    productsGrid.addEventListener("click", function (event) {
 
-            if (event.target.classList.contains("wishlist-btn")) {
-                return;
-            }
+        const card = event.target.closest(".product-card");
 
-            const productId = cards[i].dataset.productId;
-            window.location.href = "product.html?id=" + productId;
-        });
-    }
+        if (!card) {
+            return;
+        }
 
-    const quickAddButtons = document.querySelectorAll(".quick-add-btn");
+        if (event.target.closest(".wishlist-btn")) {
+            return;
+        }
 
-    for (let i = 0; i < quickAddButtons.length; i++) {
-        quickAddButtons[i].addEventListener("click", function (event) {
+        const quickBtn = event.target.closest(".quick-add-btn");
 
-            event.stopPropagation();
+        if (quickBtn) {
+            addQuickToCart(card.dataset.productId);
 
-            const productId = Number(quickAddButtons[i].dataset.productId);
-
-            let selectedProduct = null;
-            for (let j = 0; j < products.length; j++) {
-                if (products[j].id === productId) {
-                    selectedProduct = products[j];
-                }
-            }
-
-            if (selectedProduct === null) {
-                return;
-            }
-
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const defaultSize = "M";
-
-            let alreadyInCart = false;
-
-            for (let k = 0; k < cart.length; k++) {
-                if (cart[k].id === selectedProduct.id && cart[k].size === defaultSize) {
-                    cart[k].quantity = Number(cart[k].quantity) + 1;
-                    alreadyInCart = true;
-                }
-            }
-
-            if (!alreadyInCart) {
-                cart.push({
-                    id: selectedProduct.id,
-                    name: selectedProduct.name,
-                    price: selectedProduct.price,
-                    image: selectedProduct.image,
-                    size: defaultSize,
-                    quantity: 1
-                });
-            }
-
-            localStorage.setItem("cart", JSON.stringify(cart));
-
-            quickAddButtons[i].textContent = "Added ✓";
+            quickBtn.textContent = "Added ✓";
 
             setTimeout(function () {
-                quickAddButtons[i].textContent = "Add to Cart";
+                quickBtn.textContent = "Add to Cart";
             }, 1500);
+
+            return;
+        }
+
+        window.location.href = "product.html?id=" + card.dataset.productId;
+    });
+
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+
+            activeFilter = button.dataset.filter;
+
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            showProducts();
+        });
+    });
+
+
+    if (sortSelect) {
+        sortSelect.addEventListener("change", function () {
+            activeSort = sortSelect.value;
+            showProducts();
         });
     }
+
+
+    showProducts();
 }
